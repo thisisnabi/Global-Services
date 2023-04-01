@@ -34,8 +34,9 @@ public abstract class ValueObject : IEquatable<ValueObject>
 
     public bool Equals(ValueObject? other)
     {
-        // First, convert to nullable objects
-        return Equals((object?)other);
+        var nullableObject = (object?)other;
+
+        return Equals(nullableObject);
     }
 
     public override int GetHashCode()
